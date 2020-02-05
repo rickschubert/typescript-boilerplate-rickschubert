@@ -1,51 +1,39 @@
 {
     "name": "typescript-boilerplate-rickschubert",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "",
     "main": "dist/index.js",
     "scripts": {
-        "lint": "eslint '**/*.ts'",
-        "watch": "npm run build -- --watch",
-        "precommit": "lint-staged",
-        "build": "node_modules/typescript/bin/tsc"
+        "build": "node_modules/typescript/bin/tsc",
+        "lint": "./node_modules/eslint/bin/eslint.js 'src/**/*.ts'",
+        "watch": "npm run build -- --watch"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "linters": {
-            "*.js": [
-                "prettier --write",
-                "eslint --fix",
-                "git add"
-            ],
-            "*.ts": [
-                "prettier --write",
-                "eslint --fix",
-                "git add"
-            ],
-            "*.json": [
-                "prettier --write",
-                "git add"
-            ]
-        }
-    },
-    "author": "",
+    "author": "Rick Schubert",
     "license": "ISC",
     "dependencies": {
-        "@types/node": "^12.0.8",
-        "@typescript-eslint/eslint-plugin": "^1.10.2",
-        "@typescript-eslint/parser": "^1.10.2",
-        "typescript": "^3.5.1"
+        "@types/node": "^13.7.0",
+        "typescript": "^3.7.5"
     },
     "devDependencies": {
-        "eslint": "^5.16.0",
-        "eslint-config-rickschubert": "^1.0.10",
-        "husky": "^2.1.0",
-        "lint-staged": "^8.1.5",
-        "prettier": "^1.18.2",
-        "tslint": "^5.17.0"
+        "@typescript-eslint/eslint-plugin": "^2.19.0",
+        "@typescript-eslint/parser": "^2.19.0",
+        "eslint": "^6.8.0",
+        "eslint-config-rickschubert": "^1.0.11",
+        "husky": "^4.2.1",
+        "lint-staged": "^10.0.7",
+        "prettier": "^1.19.1"
+    },
+    "lint-staged": {
+        "*.js": [
+            "prettier --write",
+            "./node_modules/eslint/bin/eslint.js --fix"
+        ],
+        "*.ts": [
+            "prettier --write",
+            "./node_modules/eslint/bin/eslint.js --fix"
+        ],
+        "*.json": [
+            "prettier --write"
+        ]
     }
 }

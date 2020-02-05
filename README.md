@@ -1,4 +1,0 @@
-- `npm i` to install all dependencies
-- `npm run build` to build the project to a folder `/dist`
-- `node dist` to start the index.js file inside the `dist` foler
-- `npm run watch` allows you to always re-build when changes occur
