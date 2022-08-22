@@ -5,8 +5,8 @@
     "main": "dist/index.js",
     "scripts": {
         "build": "node_modules/typescript/bin/tsc",
-        "lint": "./node_modules/eslint/bin/eslint.js 'src/**/*.ts'",
-        "prettify": "prettier '**/*.ts' --write",
+        "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\"",
+        "prettify": "prettier '**/*.{ts,tsx,js,jsx,json}' --write",
         "lintFull": "npm run prettify && npm run lint -- --fix",
         "watch": "npm run build -- --watch",
         "prepare": "husky install"
